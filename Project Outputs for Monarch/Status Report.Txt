@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Monarch.PrjPCB]
+   Generated File[Monarch.TXT]
+   Generated File[Monarch.LDP]
+   Generated File[Monarch.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 01:23:15 On 12/14/2018
