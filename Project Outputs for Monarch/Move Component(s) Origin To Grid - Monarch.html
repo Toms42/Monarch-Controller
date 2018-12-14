@@ -1,0 +1,287 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Move Component(s) Origin to Grid</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD16\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Move Component(s) Origin to Grid</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12/13/2018</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">21:10:47</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc" class="file"><acronym title="C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc">C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc</acronym></a></td>
+</tr>
+</table><a name="ID1BAKJ2KUAVAFEUYCKITRJAQHZD05JEONPEXKLFF1TBG2MAYHJSXG"><h2>Components Origin</h2></a><a name="ID1QIPD5MYVT5YIFISQ3S4EWFL3L11JJ15DSM2N2M22N4ZDVS4ALMB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning"></th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=801.772mil|Location2.X=866.732mil|Location1.Y=516.831mil|Location2.Y=629.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=801.772mil|Location2.X=866.732mil|Location1.Y=516.831mil|Location2.Y=629.035mil|Absolute=True">SMT Small Component C5-10uF (754.252mil,257.933mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=436.24mil|Location2.X=528.76mil|Location1.Y=352.362mil|Location2.Y=397.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=436.24mil|Location2.X=528.76mil|Location1.Y=352.362mil|Location2.Y=397.638mil|Absolute=True">SMT Small Component C7-2.2uF (402.5mil,60mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=643.74mil|Location2.X=736.26mil|Location1.Y=367.362mil|Location2.Y=412.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=643.74mil|Location2.X=736.26mil|Location1.Y=367.362mil|Location2.Y=412.638mil|Absolute=True">SMT Small Component C2-2.2uF (610mil,75mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=572.52mil|Location2.X=637.48mil|Location1.Y=346.398mil|Location2.Y=458.602mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=572.52mil|Location2.X=637.48mil|Location1.Y=346.398mil|Location2.Y=458.602mil|Absolute=True">SMT Small Component C1-10uF (525mil,87.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=788.898mil|Location2.X=901.102mil|Location1.Y=440.02mil|Location2.Y=504.98mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=788.898mil|Location2.X=901.102mil|Location1.Y=440.02mil|Location2.Y=504.98mil|Absolute=True">SMT Small Component C4-10uF (765mil,157.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=986.241mil|Location2.X=1051.201mil|Location1.Y=603.999mil|Location2.Y=637.464mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=986.241mil|Location2.X=1051.201mil|Location1.Y=603.999mil|Location2.Y=637.464mil|Absolute=True">SMT Small Component R2-100K (938.721mil,305.731mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=876.555mil|Location2.X=976.949mil|Location1.Y=518.583mil|Location2.Y=737.266mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=876.555mil|Location2.X=976.949mil|Location1.Y=518.583mil|Location2.Y=737.266mil|Absolute=True">Component U2-TPS62172DSGR (846.752mil,255.748mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=341.87mil|Location2.X=513.13mil|Location1.Y=372.677mil|Location2.Y=623.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=341.87mil|Location2.X=513.13mil|Location1.Y=372.677mil|Location2.Y=623.661mil|Absolute=True">LCC Component U1-BNO055 (347.5mil,195.472mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=657.52mil|Location2.X=722.48mil|Location1.Y=420.768mil|Location2.Y=454.232mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=657.52mil|Location2.X=722.48mil|Location1.Y=420.768mil|Location2.Y=454.232mil|Absolute=True">SMT Small Component C3-0.1uF (610mil,122.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=520.768mil|Location2.X=554.232mil|Location1.Y=408.85mil|Location2.Y=473.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=520.768mil|Location2.X=554.232mil|Location1.Y=408.85mil|Location2.Y=473.811mil|Absolute=True">SMT Small Component C6-0.1uF (457.5mil,126.33mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=365.02mil|Location2.X=429.98mil|Location1.Y=355.768mil|Location2.Y=389.232mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=365.02mil|Location2.X=429.98mil|Location1.Y=355.768mil|Location2.Y=389.232mil|Absolute=True">SMT Small Component C8-0.1uF (317.5mil,57.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=743.268mil|Location2.X=776.732mil|Location1.Y=367.52mil|Location2.Y=432.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=743.268mil|Location2.X=776.732mil|Location1.Y=367.52mil|Location2.Y=432.48mil|Absolute=True">SMT Small Component R1-10K (680mil,85mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=793.802mil|Location2.X=1001.676mil|Location1.Y=317.026mil|Location2.Y=424.9mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=793.802mil|Location2.X=1001.676mil|Location1.Y=317.026mil|Location2.Y=424.9mil|Absolute=True">Small Component P3-Header 2 (767.739mil,55.963mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=422.52mil|Location2.X=487.48mil|Location1.Y=778.268mil|Location2.Y=811.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=422.52mil|Location2.X=487.48mil|Location1.Y=778.268mil|Location2.Y=811.732mil|Absolute=True">SMT Small Component C9-0.1uF (375mil,480mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=988.268mil|Location2.X=1021.732mil|Location1.Y=440.02mil|Location2.Y=504.98mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=988.268mil|Location2.X=1021.732mil|Location1.Y=440.02mil|Location2.Y=504.98mil|Absolute=True">SMT Small Component C10-0.1uF (925mil,157.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=193.439mil|Location2.X=256.559mil|Location1.Y=474.051mil|Location2.Y=520.437mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=193.439mil|Location2.X=256.559mil|Location1.Y=474.051mil|Location2.Y=520.437mil|Absolute=True">SMT Small Component J1-(Open) (145mil,197.5mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=113.439mil|Location2.X=176.559mil|Location1.Y=474.051mil|Location2.Y=520.437mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=113.439mil|Location2.X=176.559mil|Location1.Y=474.051mil|Location2.Y=520.437mil|Absolute=True">SMT Small Component J2-(Closed) (65mil,197.5mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=560.768mil|Location2.X=594.232mil|Location1.Y=717.52mil|Location2.Y=782.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=560.768mil|Location2.X=594.232mil|Location1.Y=717.52mil|Location2.Y=782.48mil|Absolute=True">SMT Small Component R3-1K (497.5mil,435mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=560.768mil|Location2.X=594.232mil|Location1.Y=651.011mil|Location2.Y=715.972mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=560.768mil|Location2.X=594.232mil|Location1.Y=651.011mil|Location2.Y=715.972mil|Absolute=True">SMT Small Component R4-1K (497.5mil,368.492mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=908.268mil|Location2.X=941.732mil|Location1.Y=440.335mil|Location2.Y=505.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=908.268mil|Location2.X=941.732mil|Location1.Y=440.335mil|Location2.Y=505.295mil|Absolute=True">SMT Small Component R5-4K53 1% (845mil,157.815mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=948.268mil|Location2.X=981.732mil|Location1.Y=440.02mil|Location2.Y=504.98mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=948.268mil|Location2.X=981.732mil|Location1.Y=440.02mil|Location2.Y=504.98mil|Absolute=True">SMT Small Component R6-1K5 1% (885mil,157.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=670.866mil|Location2.X=779.134mil|Location1.Y=654.646mil|Location2.Y=768.228mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=670.866mil|Location2.X=779.134mil|Location1.Y=654.646mil|Location2.Y=768.228mil|Absolute=True">SOIC Component Q1-BSS138DW-7-F (645mil,405mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=837.812mil|Location2.X=884.198mil|Location1.Y=713.441mil|Location2.Y=776.561mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=837.812mil|Location2.X=884.198mil|Location1.Y=713.441mil|Location2.Y=776.561mil|Absolute=True">SMT Small Component J3-(Open) (796.261mil,430mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1041.473mil|Location2.X=1655mil|Location1.Y=320.369mil|Location2.Y=820.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1041.473mil|Location2.X=1655mil|Location1.Y=320.369mil|Location2.Y=820.369mil|Absolute=True">DIP Component P1-Header 5X2H (1095mil,55.369mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=824mil|Location2.X=1032mil|Location1.Y=636.5mil|Location2.Y=768.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=824mil|Location2.X=1032mil|Location1.Y=636.5mil|Location2.Y=768.5mil|Absolute=True">SMT Small Component L1-IHLP-1212BZ (825mil,387.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=565.965mil|Location2.X=749.035mil|Location1.Y=465.965mil|Location2.Y=649.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=565.965mil|Location2.X=749.035mil|Location1.Y=465.965mil|Location2.Y=649.035mil|Absolute=True">LCC Component MSP1-MSP430FR2433IRGER (577.5mil,242.5mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=348.76mil|Location2.X=555.453mil|Location1.Y=637.264mil|Location2.Y=799.665mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=348.76mil|Location2.X=555.453mil|Location1.Y=637.264mil|Location2.Y=799.665mil|Absolute=True">SOIC Component U3-MPL3115A2 (372.106mil,390.177mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=80.315mil|Location2.X=345.091mil|Location1.Y=344.897mil|Location2.Y=785.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Science\Desktop\Projects\Fun\Monarch-Controller\Monarch.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=80.315mil|Location2.X=345.091mil|Location1.Y=344.897mil|Location2.Y=785.841mil|Absolute=True">SMT SIP Component P2-53261-0471 (145mil,250.369mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
