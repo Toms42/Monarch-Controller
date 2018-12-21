@@ -18,7 +18,7 @@ Control board for autonomous bio-mimetic butterfly drones. This board will conve
 <img src="https://i.imgur.com/mdB33x4.png" width="500">
 
 # Pics:
-<img src="https://i.imgur.com/7ER366f.png" width="500">
+<img src="https://i.imgur.com/7ER366f.png?1" width="500">
 
 # Known issues:
 * Servo power/ground flipped relative to standard servo pins
