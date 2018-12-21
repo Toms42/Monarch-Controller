@@ -13,6 +13,7 @@ Control board for autonomous bio-mimetic butterfly drones. This board will conve
 * Low-power MSP430 microcontroller
 
 # 3d Renders:
+(Note: renders not up to date. Power/ground have been re-routed since then to avoid splitting the ground plane on the back.
 <img src="https://i.imgur.com/szq5Si1.png" width="500">
 <img src="https://i.imgur.com/quQAk56.png" width="500">
 <img src="https://i.imgur.com/mdB33x4.png" width="500">
